@@ -197,10 +197,10 @@ web_environment: []
 #   - exec: drush updb
 hooks: 
   post-start:
-    - exec: echo "Run bash link.sh"
+    #- exec: echo "Run bash link.sh"
     #- exec: cd web/sites/default/files/ && ln -sf ../../../../config/sync sync
     #- exec: ln -sfr ./config/sync ./web/sites/default/files/sync
     #- exec: ln -sf /var/www/html/config/sync /var/www/html/web/sites/default/files/sync
-    #- exec: bash link.sh
+    - exec: ./link.sh
   # post-stop:
   #   - exec: rm web/sites/default/files/sync    
