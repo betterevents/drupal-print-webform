@@ -1,0 +1,1 @@
+ln -sfr ./config/sync ./web/sites/default/files/sync
