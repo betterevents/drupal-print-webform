@@ -2,8 +2,13 @@
 
 # Static Server
 ```
-npm install http-server -g
+npm install http-server -g 
 http-server
+```
+or simple
+
+```
+npx http-server
 ```
 
 ## References
