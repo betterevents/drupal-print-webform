@@ -1,5 +1,10 @@
 # Print from HTML
 
+# Static Server
+```
+npm install http-server -g
+http-server
+```
 
 ## References
 * [ZEBRA LABEL SIZES](https://www.labelvalue.com/zebra-label-sizes)
