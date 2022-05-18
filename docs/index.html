@@ -2,7 +2,79 @@
 <html>
 
 <head>
+
   <style>
+    /*
+      * Ruler
+      */
+    .ruler {
+      display: flex;
+      flex-wrap: nowrap;
+      list-style: none;
+      position: relative;
+      margin: 4em 2em;
+      height: 2em;
+      padding: 0;
+      color: #ddd;
+      outline: 2px currentColor solid;
+      outline-offset: -2px;
+
+      counter-reset: cm;
+      width: max-content;
+      font: .85em Arial;
+
+      position: absolute;
+    }
+
+    .ruler.vertical {
+      transform: rotate(90deg);
+    }
+
+    .ruler::before {
+      display: block;
+      width: max-content;
+      content: "0";
+      position: absolute;
+      bottom: 100%;
+      left: 2px;
+      transform: translate(-50%, -1em)
+    }
+
+    .ruler li::after {
+      content: counter(cm);
+      counter-increment: cm;
+      display: block;
+      width: max-content;
+      overflow: visible;
+      color: #ddd;
+      text-align: right;
+      transform: translate(50%, -1.5em);
+    }
+
+    .ruler li:nth-child(2n - 1)::after {
+      color: transparent;
+    }
+
+
+    .ruler li {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: flex-end;
+      color: transparent;
+      width: 1cm;
+      height: calc(2px + 1.5em);
+      transform: translate(0, -.75em);
+      box-sizing: border-box;
+      border-left: 2px #ddd solid;
+    }
+
+    .ruler li:last-child {
+      border-right: 2px #ddd solid;
+    }
+
+    /* EOF Ruler */
+
+
     * {
       font-family: sans-serif;
     }
@@ -28,39 +100,45 @@
     section h1 {
       font-weight: normal;
       font-size: 16px;
-      margin: 4px 0 0 0;
+      margin: 0 0 4px 0;
       padding: 0;
       height: auto;
       text-align: center;
       line-height: 1;
     }
+
+    @media print {
+      .ruler {
+        display: none
+      }
+    }
   </style>
 </head>
 
 <body>
-
   <section>
+    <h1>Stavros Kounis</h1>
     <img
       src="http://api.qrserver.com/v1/create-qr-code/?color=000000&bgcolor=FFFFFF&data=emh2022-stavros-kounis&qzone=0&margin=10&size=400x400&ecc=L">
-    <h1>Stavros Kounis</h1>
+
   </section>
 
   <section>
-    <img
-      src="http://api.qrserver.com/v1/create-qr-code/?color=000000&bgcolor=FFFFFF&data=emh2022-sofia-atsalou&qzone=0&margin=10&size=400x400&ecc=L">
     <h1>Sofia Atsalou</h1>
+    <img
+      src="http://api.qrserver.com/v1/create-qr-code/?color=000000&bgcolor=FFFFFF&data=emh2022-sofia-atsalou&qzone=0&margin=10&size=400x400&ecc=L">    
   </section>
 
   <section>
-    <img
-      src="http://api.qrserver.com/v1/create-qr-code/?color=000000&bgcolor=FFFFFF&data=emh2022-katerina-mpisia&qzone=0&margin=10&size=400x400&ecc=L">
     <h1>Κατερίνα Μπίσια</h1>
+    <img
+      src="http://api.qrserver.com/v1/create-qr-code/?color=000000&bgcolor=FFFFFF&data=emh2022-katerina-mpisia&qzone=0&margin=10&size=400x400&ecc=L">    
   </section>
 
   <section>
-    <img
-      src="http://api.qrserver.com/v1/create-qr-code/?color=000000&bgcolor=FFFFFF&data=emh2022-giannis-pretzas&qzone=0&margin=10&size=400x400&ecc=L">
     <h1>Γιάννης Πρέτζας</h1>
+    <img
+      src="http://api.qrserver.com/v1/create-qr-code/?color=000000&bgcolor=FFFFFF&data=emh2022-giannis-pretzas&qzone=0&margin=10&size=400x400&ecc=L">    
   </section>
 </body>
 
