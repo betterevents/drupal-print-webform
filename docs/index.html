@@ -2,7 +2,6 @@
 <html>
 
 <head>
-
   <style>
     /*
       * Ruler
@@ -39,6 +38,7 @@
       left: 2px;
       transform: translate(-50%, -1em)
     }
+
 
     .ruler li::after {
       content: counter(cm);
@@ -82,8 +82,8 @@
     section {
       border: 1px solid rgb(229, 226, 226);
       page-break-after: always;
-      height: 4cm;
-      width: 6cm;
+      height: 3.5cm;
+      width: 5.5cm;
       overflow: hidden;
       text-align: center;
       display: block;
@@ -107,15 +107,11 @@
       line-height: 1;
     }
 
-    @media print {
-      .ruler {
-        display: none
-      }
-    }
   </style>
 </head>
 
 <body>
+
   <section>
     <h1>Stavros Kounis</h1>
     <img
