@@ -27,3 +27,11 @@ services:
       DISPLAY: ":14"
       XPRA_TCP_PORT: "8080"
       XPRA_PASSWORD: MUST_BE_SOMETHING # This password can be anything you want.
+  mysql:
+    image: percona/percona-server:5.7
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+#    volumes:
+#      - mysql:/var/lib/mysql
+    ports:
+      - 3306:3306
