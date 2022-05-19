@@ -1,4 +1,4 @@
-FROM debian:bullseye-slim
+FROM debian:bullseye-slim AS dev
 ARG DEBIAN_FRONTEND=noninteractive
 USER root
 COPY php.ini /tmp
