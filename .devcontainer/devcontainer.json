@@ -1,4 +1,4 @@
 {
-    "service": "mysql",
+    "service": "dbs",
     "dockerComposeFile": "docker-compose.yml",
 }
