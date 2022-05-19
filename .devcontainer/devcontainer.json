@@ -1,4 +1,7 @@
 {
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
     "service": "dbs",
     "dockerComposeFile": "docker-compose.yml",
 }
