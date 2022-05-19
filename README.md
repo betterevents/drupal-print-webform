@@ -23,3 +23,5 @@ npx http-server
 * https://github.com/skounis/drupal-on-codespaces
 * https://lando.dev/blog/2022/02/07/using-lando-on-github-codespaces.html
      * https://github.com/lando/drupal-dev-environment
+* Multiple containers
+     * https://devopstar.com/2022/01/03/cypress-testing-in-devcontainers-and-github-codespaces   
