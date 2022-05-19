@@ -2,6 +2,8 @@
     "build": {
         "dockerfile": "Dockerfile"
     },
+    "service": "mysql",
+    "dockerComposeFile": "docker-compose.yml",
     "extensions": [
 		"mblode.twig-language-2",
 		"bmewburn.vscode-intelephense-client",
