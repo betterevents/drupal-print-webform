@@ -5,6 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    command: sleep infinity
 
   mysql:
     image: percona/percona-server:5.7
