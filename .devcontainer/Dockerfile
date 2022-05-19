@@ -22,9 +22,5 @@ RUN apt-get update -yq \
     && wget -O /usr/local/bin/drush https://github.com/drush-ops/drush-launcher/releases/latest/download/drush.phar \
     && chmod +x /usr/local/bin/drush \
     # Clean up some things
-    && rm installer /tmp/php.ini \
-    && rm -rf /var/lib/apt/lists/* \
-    # Create a user
-    && useradd -m drupal -p drupal
-USER drupal
-ENV SHELL /bin/bash
+    && rm installer /tmp/php.ini
+
