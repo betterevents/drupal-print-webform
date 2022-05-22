@@ -10,6 +10,27 @@ or simple
 ```
 npx http-server
 ```
+# Install Drupal 
+```
+ddev drush si -y standard --config-dir=../config/sync
+ddev drush cset system.site uuid e6c429a1-5e3d-4fb3-a8ae-7a6dd01cb6f9
+ddev drush entity:delete shortcut_set
+ddev drush cim
+ddev drush upwd admin admin
+ddev drush uli
+```
+or
+```
+sed -i 's/standard/minimal/g' config/sync/core.extension.yml
+ddev drush si -y minimal --config-dir=../config/sync
+ddev drush upwd admin admin
+ddev drush uli
+```
+or
+```
+ddev import-db --src=db.sql
+``` 
+
 
 ## References
 * [ZEBRA LABEL SIZES](https://www.labelvalue.com/zebra-label-sizes)
