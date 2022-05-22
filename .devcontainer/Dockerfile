@@ -1,4 +1,5 @@
-FROM fpfis/httpd-php-dev:7.4 AS dev
+# FROM fpfis/httpd-php-dev:7.4 AS dev
+FROM bitnami/apache:latest AS dev
 # FROM debian:bullseye-slim AS dev 
 # ARG DEBIAN_FRONTEND=noninteractive
 # USER root
