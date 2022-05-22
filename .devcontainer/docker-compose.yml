@@ -6,6 +6,9 @@ services:
       context: .
       dockerfile: Dockerfile
     command: sleep infinity
+    ports:
+      - 8080:80
+
 
   mysql:
     image: percona/percona-server:5.7
