@@ -1,9 +1,9 @@
 _core:
   default_config_hash: VDJxTZtQR21qB4lvOq8zszJZLvLKrSPQpdn2E3T71Ww
 langcode: en
-uuid: e6c429a1-5e3d-4fb3-a8ae-7a6dd01cb6f9
-name: 'Drush Site-Install'
-mail: admin@example.com
+uuid: c704e6d8-063e-4a55-9197-3412721fb4cd
+name: 'Scaffold Print'
+mail: sofia.atsalou@gmail.com
 slogan: ''
 page:
   403: ''

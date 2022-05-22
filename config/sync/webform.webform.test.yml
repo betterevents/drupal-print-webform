@@ -1,0 +1,588 @@
+uuid: 8bb09290-be73-430c-964a-763be68a3f4f
+langcode: en
+status: open
+dependencies: {  }
+weight: 0
+open: null
+close: null
+uid: 1
+template: false
+archive: false
+id: test
+title: '20ο Πανελλήνιο Ηπατολογικό Συνέδριο - 29η Διημερίδα «Στέφανος Χατζηγιάννης»'
+description: ''
+category: ''
+elements: |-
+  attendee_id:
+    '#type': webform_computed_twig
+    '#title': 'Attendee ID'
+    '#display_on': view
+    '#template': |
+      {% set id = 'eemh2022-' ~ ('%05d'|format(serial)) %}
+      {{id}}
+    '#whitespace': trim
+    '#store': true
+  header:
+    '#type': processed_text
+    '#display_on': both
+    '#text': |
+      <p data-entity-type="" data-entity-uuid="" style="text-align: center;"><span><img alt="6ο Ελληνικό Συνέδριο Ογκολογίας" data-entity-type="" data-entity-uuid="" src="https://ets.betterevents.live/sites/default/files/2021-12/Fasa-BE-20o-HPAT-2021-_0.jpg" /><span title="Click and drag to resize">​</span></span></p>
+    '#format': mt_full_html_with_color_buttons
+  set_info:
+    '#type': fieldset
+    '#title': Γενικά
+    flexbox:
+      '#type': webform_flexbox
+      last_name:
+        '#type': textfield
+        '#title': Επώνυμο
+        '#required': true
+      first_name:
+        '#type': textfield
+        '#title': Όνομα
+        '#required': true
+  set_specialty:
+    '#type': fieldset
+    '#title': Ειδικότητα
+    flexbox_01:
+      '#type': webform_flexbox
+      container_specialty:
+        '#type': container
+        specialty:
+          '#type': select
+          '#title': 'Κύρια Ειδικότητα'
+          '#options':
+            executive_secretary: 'Διοικητικοί Υπάλληλοι - Γραμματεία'
+            organisation_members: 'Μέλη Συλλόγων - MKO'
+            molecular_biology: 'Μοριακή Βιολογία'
+            radiophysicist: 'Τεχνολόγοι - Ακτινοφυσικοί'
+            hematology: Αιματολογία
+            radiodiagnostic: Ακτινοδιαγνωστική
+            radiotherapist_oncology: 'Ακτινοθεραπευτική Ογκολογία'
+            allergy: Αλλεργιολογία
+            anesthesiology: Αναισθησιολογία
+            gastroenterology: Γαστρεντερολογία
+            general_medicine: 'Γενική Ιατρική'
+            dermatology: 'Δερματολογία - Αφροδισιολογία'
+            dietetics: Διαιτολογία
+            endocrinology: Ενδοκρινολογία
+            medical_court: Ιατροδικαστική
+            cardiology: Καρδιολογία
+            cytology: Κυτταρολογία
+            obstetrics_gynecology: 'Μαιευτική - Γυναικολογία'
+            microbiology: 'Μικροβιολογία (Ιατρική Βιοπαθολογία)'
+            neurology: Νευρολογία
+            neurosurgery: Νευροχειρουργική
+            nephrology: Νεφρολογία
+            nursing: Νοσηλευτική
+            dentistry: Οδοντιατρική
+            orthopedic: Ορθοπεδική
+            urology: Ουρολογία
+            ophthalmology: Οφθαλμολογία
+            pathology: 'Παθολογία - Ηπατολογία'
+            pathological_anatomy: 'Παθολογική Ανατομική'
+            pathological_oncology: 'Παθολογική Ογκολογία'
+            pediatrics: Παιδιατρική
+            plastic_surgery: 'Πλαστική Χειρουργική'
+            pulmonology_tuberculosis: 'Πνευμονολογία – Φυματιολογία'
+            nuclear_medicine: 'Πυρηνική Ιατρική'
+            rheumatology: Ρευματολογία
+            pharmaceutical_companies: 'Φαρμακευτικές Εταιρείες'
+            pharmacist: Φαρμακοποιός
+            student: 'Φοιτητής / τρια'
+            surgery: Χειρουργική
+            thoracic_surgery: 'Χειρουργική Θώρακος'
+            psychiatry: Ψυχιατρική
+            otolaryngology: Ωτορινολαρυγγολογία
+            other: 'Λοιποί Επιστήμονες'
+          '#required': true
+          '#attributes':
+            style: 'margin: 0'
+        other_specialty:
+          '#type': textfield
+          '#title': 'Λοιποί Επιστήμονες'
+          '#description': '&Pi;&alpha;&rho;&alpha;&kappa;&alpha;&lambda;&omicron;ύ&mu;&epsilon; &sigma;&upsilon;&mu;&pi;&lambda;&eta;&rho;ώ&sigma;&tau;&epsilon; &tau;&eta;&nu; &kappa;ύ&rho;&iota;&alpha; &epsilon;&iota;&delta;&iota;&kappa;ό&tau;&eta;&tau;ά &sigma;&alpha;&sigmaf;.'
+          '#states':
+            visible:
+              ':input[name="specialty"]':
+                value: other
+            required:
+              ':input[name="specialty"]':
+                value: other
+      container_sub_specialty:
+        '#type': container
+        subspecialty:
+          '#type': textfield
+          '#title': Εξειδίκευση
+    category:
+      '#type': select
+      '#title': Κατηγορία
+      '#options':
+        physician: 'Ειδικευμένος ιατρός'
+        resident: 'Ειδικευόμενος ιατρός'
+        nurse: Νοσηλευτής
+        student: Φοιτητής
+        health_scientist: 'Άλλες ειδικότητες'
+      '#required': true
+    web_attendance:
+      '#type': checkbox
+      '#title': 'Θα συμμετέχω μόνο διαδικτυακά'
+      '#description': '&Epsilon;&nu;&epsilon;&rho;&gamma;&omicron;&pi;&omicron;&iota;ή&sigma;&tau;&epsilon; &alpha;&upsilon;&tau;ή &tau;&eta;&nu; &epsilon;&pi;&iota;&lambda;&omicron;&gamma;ή &alpha;&nu; &epsilon;&pi;&iota;&theta;&upsilon;&mu;&epsilon;ί&tau;&epsilon; &nu;&alpha; &pi;&alpha;&rho;&alpha;&kappa;&omicron;&lambda;&omicron;&upsilon;&theta;ή&sigma;&epsilon;&tau;&epsilon; &tau;&omicron; &sigma;&upsilon;&nu;έ&delta;&rho;&iota;&omicron; <strong>&mu;ό&nu;&omicron;</strong> &delta;&iota;&alpha;&delta;&iota;&kappa;&tau;&upsilon;&alpha;&kappa;ά.'
+    registration_fees:
+      '#type': processed_text
+      '#wrapper_attributes':
+        class:
+          - table-responsive
+      '#text': |
+        <table>
+        	<tbody>
+        		<tr>
+        			<th style:="">Κόστος Εγγραφών</th>
+        			<th style:="">Έως τις<br />
+        			20/3/2022</th>
+        			<th style:="">Μετά τις<br />
+        			20/03/2022</th>
+        			<th style:="">Διαδικτυακή<br />
+        			Παρουσία</th>
+        		</tr>
+        		<tr>
+        			<td style:="">Ειδικευμένοι</td>
+        			<td style:="">€ 200,00</td>
+        			<td style:="">€ 200,00</td>
+        			<td style:="">€ 50,00</td>
+        		</tr>
+        		<tr>
+        			<td style:="">Ειδικευόμενοι</td>
+        			<td style:="">€ 150,00</td>
+        			<td style:="">€ 170,00</td>
+        			<td style:="">€ 50,00</td>
+        		</tr>
+        		<tr>
+        			<td style:="">Άλλες ειδικότητες</td>
+        			<td style:="">€ 50,00</td>
+        			<td style:="">€ 80,00</td>
+        			<td style:="">€ 50,00</td>
+        		</tr>
+        		<tr>
+        			<td style:="">Νοσηλευτές</td>
+        			<td style:="">€ 20,00</td>
+        			<td style:="">€ 20,00</td>
+        			<td style:="">€ 20,00</td>
+        		</tr>
+        		<tr>
+        			<td style:="">Φοιτητές</td>
+        			<td style:="">Δωρεάν</td>
+        			<td style:="">Δωρεάν</td>
+        			<td style:="">Δωρεάν</td>
+        		</tr>
+        	</tbody>
+        </table>
+      '#format': mt_full_html_with_color_buttons
+    flexbox_02:
+      '#type': webform_flexbox
+      affiliation:
+        '#type': textfield
+        '#title': Νοσοκομείο/Φορέας
+        '#description': '&Sigma;&upsilon;&mu;&pi;&lambda;&eta;&rho;ώ&sigma;&tau;&epsilon; &tau;&omicron; &Nu;&omicron;&sigma;&omicron;&kappa;&omicron;&mu;&epsilon;ί&omicron; ή &tau;&omicron;&nu; &Phi;&omicron;&rho;έ&alpha;&sigmaf; &sigma;&alpha;&sigmaf;.'
+        '#required': true
+      city:
+        '#type': textfield
+        '#title': Πόλη
+        '#required': true
+  set_contact:
+    '#type': fieldset
+    '#title': Επικοινωνία
+    email:
+      '#type': email
+      '#title': E-mail
+      '#required': true
+    cell_phone_number:
+      '#type': tel
+      '#title': Κινητό
+      '#required': true
+    phone_number:
+      '#type': tel
+      '#title': Τηλέφωνο
+  set_payment:
+    '#type': fieldset
+    '#title': Πληρωμή
+    '#required': true
+    '#states':
+      disabled:
+        ':input[name="category"]':
+          value: student
+      invisible-slide:
+        ':input[name="category"]':
+          value: student
+    registration_fee:
+      '#type': webform_computed_twig
+      '#title': registration_fee
+      '#wrapper_attributes':
+        style: 'display:none'
+      '#template': |
+        {% if data.web_attendance and data.category != 'student' and data.category != 'nurse' %}
+        {{'50'}}
+        {% elseif data.web_attendance and data.category == 'nurse' %}
+        {{'20'}}
+        {% elseif data.category == 'physician' %}
+        {{'200'}}
+        {% elseif data.category == 'resident' %}
+        {{'150'}}
+        {% elseif data.category == 'health_scientist' %}
+        {{'50'}}
+        {% elseif data.category == 'nurse' %}
+        {{'20'}}
+        {% else %}
+        {{'1'}}
+        {% endif %}
+      '#whitespace': trim
+      '#store': true
+    markup_fee_physician:
+      '#type': webform_markup
+      '#states':
+        visible:
+          ':input[name="category"]':
+            value: physician
+          ':input[name="web_attendance"]':
+            unchecked: true
+      '#display_on': both
+      '#markup': '<h5>&Kappa;ό&sigma;&tau;&omicron;&sigmaf; &epsilon;&gamma;&gamma;&rho;&alpha;&phi;ή&sigmaf; 200<strong>.00 &epsilon;&upsilon;&rho;ώ</strong>.&nbsp;</h5>'
+    markup_fee_resident:
+      '#type': webform_markup
+      '#states':
+        visible:
+          ':input[name="category"]':
+            value: resident
+          ':input[name="web_attendance"]':
+            unchecked: true
+      '#display_on': both
+      '#markup': '<h5>&Kappa;ό&sigma;&tau;&omicron;&sigmaf; &epsilon;&gamma;&gamma;&rho;&alpha;&phi;ή&sigmaf; 150<strong>.00 &epsilon;&upsilon;&rho;ώ</strong>.&nbsp;</h5>'
+    markup_fee_other:
+      '#type': webform_markup
+      '#states':
+        visible:
+          ':input[name="category"]':
+            value: health_scientist
+          ':input[name="web_attendance"]':
+            unchecked: true
+      '#display_on': both
+      '#markup': '<h5>&Kappa;ό&sigma;&tau;&omicron;&sigmaf; &epsilon;&gamma;&gamma;&rho;&alpha;&phi;ή&sigmaf; 50<strong>.00 &epsilon;&upsilon;&rho;ώ</strong>.&nbsp;</h5>'
+    markup_nurse:
+      '#type': webform_markup
+      '#states':
+        visible:
+          ':input[name="category"]':
+            value: nurse
+      '#display_on': both
+      '#markup': '<h5>&Kappa;ό&sigma;&tau;&omicron;&sigmaf; &epsilon;&gamma;&gamma;&rho;&alpha;&phi;ή&sigmaf; 20<strong>.00 &epsilon;&upsilon;&rho;ώ</strong>.&nbsp;</h5>'
+    markup_fee_rest:
+      '#type': webform_markup
+      '#states':
+        visible:
+          ':input[name="category"]':
+            '!value': nurse
+          ':input[name="web_attendance"]':
+            checked: true
+      '#display_on': both
+      '#markup': '<h5>&Kappa;ό&sigma;&tau;&omicron;&sigmaf; &epsilon;&gamma;&gamma;&rho;&alpha;&phi;ή&sigmaf; 50<strong>.00 &epsilon;&upsilon;&rho;ώ</strong>.&nbsp;</h5>'
+    payment_method:
+      '#type': radios
+      '#title': 'Τρόπος πληρωμής'
+      '#options':
+        card: 'Πιστωτική κάρτα'
+        bank: 'Τραπεζική κατάθεση -- Η εγγραφή θα ενεργοποιηθεί μετά την επιβεβαίωση της κατάθεσης.'
+      '#required': true
+      '#default_value': card
+    credit_card:
+      '#type': stripe
+      '#title': 'Πιστωτική Κάρτα'
+      '#states':
+        disabled:
+          - ':input[name="category"]':
+              value: student
+          - or
+          - ':input[name="payment_method"]':
+              value: bank
+        optional:
+          - ':input[name="category"]':
+              value: student
+          - or
+          - ':input[name="payment_method"]':
+              value: bank
+        invisible-slide:
+          ':input[name="payment_method"]':
+            value: bank
+      '#stripe_country': GR
+      '#stripe_currency': eur
+      '#webform_stripe_amount': '[webform_submission:values:registration_fee]'
+      '#stripe_name': '[webform_submission:values:last_name] [webform_submission:values:first_name]'
+      '#stripe_email': '[webform_submission:values:email]'
+      '#stripe_description': 'ΕΕΜΗ 2022 - [webform_submission:values:last_name] [webform_submission:values:first_name]'
+      '#stripe_metadata': 'event: eemh2022'
+      '#stripe_selectors_first_name': 'input[name="first_name"]'
+      '#stripe_selectors_last_name': 'input[name="last_name"]'
+    markup_01:
+      '#type': webform_markup
+      '#states':
+        invisible:
+          ':input[name="payment_method"]':
+            value: bank
+      '#display_on': both
+      '#markup': '&Pi;&alpha;&rho;&alpha;&kappa;&alpha;&lambda;&omicron;ύ&mu;&epsilon; &sigma;&upsilon;&mu;&pi;&lambda;&eta;&rho;ώ&sigma;&tau;&epsilon; &tau;&alpha; &sigma;&tau;&omicron;&iota;&chi;&epsilon;ί&alpha; &tau;&eta;&sigmaf; &pi;&iota;&sigma;&tau;&omega;&tau;&iota;&kappa;ή &sigma;&alpha;&sigmaf; &kappa;ά&rho;&tau;&alpha;&sigmaf; ώ&sigma;&tau;&epsilon; &nu;&alpha; &omicron;&lambda;&omicron;&kappa;&lambda;&eta;&rho;ώ&sigma;&epsilon;&tau;&epsilon; &tau;&eta;&nu; &epsilon;&gamma;&gamma;&rho;&alpha;&phi;ή &sigma;&alpha;&sigmaf;.&nbsp;'
+    wire_details:
+      '#type': textfield
+      '#title': 'Καταθετήριο '
+      '#access_create_roles':
+        - administrator
+        - mt_manager
+        - mt_super_manager
+  set_free_registration:
+    '#type': fieldset
+    '#title': 'Δωρεάν Εγγραφή'
+    '#states':
+      visible-slide:
+        ':input[name="category"]':
+          value: student
+    markup_free:
+      '#type': webform_markup
+      '#display_on': both
+      '#markup': '<p>&Eta; &epsilon;&gamma;&gamma;&rho;&alpha;&phi;ή &gamma;&iota;&alpha; <strong>&phi;&omicron;&iota;&tau;&eta;&tau;έ&sigmaf;&nbsp;</strong>&epsilon;&iota;&nu;&alpha;&iota; <strong>&Delta;&Omega;&Rho;&Epsilon;&Alpha;&Nu;</strong>.</p>'
+  user_token:
+    '#type': webform_computed_twig
+    '#title': user_token
+    '#wrapper_attributes':
+      style: 'display:none'
+    '#template': '{{''eemh2022'' ~ serial }}'
+    '#whitespace': trim
+    '#store': true
+  terms:
+    '#type': checkbox
+    '#title': 'Αποδοχή Όρων'
+    '#description': |
+      &Delta;&eta;&lambda;ώ&nu;&omega; &sigma;ύ&mu;&phi;&omega;&nu;&omicron;&sigmaf; &eta; &epsilon;&tau;&alpha;&iota;&rho;&epsilon;ί&alpha; ETS ή &tau;&omicron; &pi;&rho;&omicron;&sigma;&omega;&pi;&iota;&kappa;ό &tau;&eta;&sigmaf; &epsilon;&tau;&alpha;&iota;&rho;&epsilon;ί&alpha;&sigmaf; &nu;&alpha; &epsilon;&pi;&iota;&kappa;&omicron;&iota;&nu;&omega;&nu;&epsilon;ί &mu;&alpha;&zeta;ί &mu;&omicron;&upsilon; &gamma;&iota;&alpha; &sigma;&kappa;&omicron;&pi;&omicron;ύ&sigmaf; έ&rho;&epsilon;&upsilon;&nu;&alpha;&sigmaf;, &pi;&lambda;&eta;&rho;&omicron;&phi;ό&rho;&eta;&sigma;&eta;&sigmaf; ή &epsilon;&mu;&pi;&omicron;&rho;&iota;&kappa;&omicron;ύ&sigmaf;. &Kappa;&alpha;&tau;&alpha;&nu;&omicron;ώ &tau;&omicron; &gamma;&epsilon;&gamma;&omicron;&nu;ό&sigmaf; ό&tau;&iota; έ&chi;&omega; &tau;&omicron; &delta;&iota;&kappa;&alpha;ί&omega;&mu;&alpha; &upsilon;&pi;&alpha;&nu;&alpha;&chi;ώ&rho;&eta;&sigma;&eta;&sigmaf; &alpha;&nu;ά &pi;ά&sigma;&alpha; &sigma;&tau;&iota;&gamma;&mu;ή, &kappa;&alpha;&theta;ώ&sigmaf; &kappa;&alpha;&iota; ό&tau;&iota; έ&chi;&omega; &tau;&omicron; &delta;&iota;&kappa;&alpha;ί&omega;&mu;&alpha; &pi;&rho;ό&sigma;&beta;&alpha;&sigma;&eta;&sigmaf; &sigma;&tau;&alpha; &pi;&rho;&omicron;&sigma;&omega;&pi;&iota;&kappa;ά &delta;&epsilon;&delta;&omicron;&mu;έ&nu;&alpha; &pi;&omicron;&upsilon; &pi;&alpha;&rho;&alpha;&chi;&omega;&rho;ώ &sigma;&epsilon; &alpha;&upsilon;&tau;ή &tau;&eta;&nu; &iota;&sigma;&tau;&omicron;&sigma;&epsilon;&lambda;ί&delta;&alpha;. &Epsilon;&pi;ί&sigma;&eta;&sigmaf;, &sigma;&upsilon;&mu;&phi;&omega;&nu;ώ &omicron;&iota; &pi;&lambda;&eta;&rho;&omicron;&phi;&omicron;&rho;ί&epsilon;&sigmaf; &pi;&omicron;&upsilon; &pi;&alpha;&rho;έ&chi;&omega; &mu;έ&sigma;&omega; &alpha;&upsilon;&tau;ή&sigmaf; &tau;&eta;&sigmaf; &iota;&sigma;&tau;&omicron;&sigma;&epsilon;&lambda;ί&delta;&alpha;&sigmaf; &nu;&alpha; &sigma;&upsilon;&lambda;&lambda;έ&gamma;&omicron;&nu;&tau;&alpha;&iota; &kappa;&alpha;&iota; &nu;&alpha; &delta;&iota;&alpha;&tau;ί&theta;&epsilon;&nu;&tau;&alpha;&iota; &gamma;&iota;&alpha; &epsilon;&pi;&iota;&kappa;&omicron;&iota;&nu;&omega;&nu;&iota;&alpha;&kappa;&omicron;ύ&sigmaf; &lambda;ό&gamma;&omicron;&upsilon;&sigmaf;. &Tau;&omicron; ETS &lambda;&alpha;&mu;&beta;ά&nu;&epsilon;&iota; &sigma;&omicron;&beta;&alpha;&rho;ά &upsilon;&pi;΄ό&psi;&iota;&nu; &tau;&eta;&nu; &pi;&rho;&omicron;&sigma;&tau;&alpha;&sigma;ί&alpha; &tau;&omega;&nu; &pi;&rho;&omicron;&sigma;&omega;&pi;&iota;&kappa;ώ&nu; &delta;&epsilon;&delta;&omicron;&mu;έ&nu;&omega;&nu;.&nbsp;<a href="https://www.livemed.gr/en/privacy-terms-conditions" target="_blank">&Pi;&omicron;&lambda;&iota;&tau;&iota;&kappa;ή &Alpha;&pi;&omicron;&rho;&rho;ή&tau;&omicron;&upsilon;</a><br />
+      <br />
+      I agree that the ETS or company staff can contact me for research, informational or commercial purposes. I understand the fact that I have the right to retreat at any time, as well as that I have the right to access the personal data I provide on this website. I also agree that the information I provide through this site is collected and processed for communication purposes. ETS takes very seriously data protection.&nbsp;<a href="http://www.livemed.gr/en/privacy-terms-conditions" target="_blank">More about Privacy Policy.</a>
+    '#required': true
+  qr_code:
+    '#type': webform_computed_twig
+    '#title': 'QR code'
+    '#wrapper_attributes':
+      style: 'display: none'
+    '#display_on': none
+    '#mode': html
+    '#template': |
+      {% set doNotShow = data.web_attendance or ( data.web_attendance is empty and data.payment_method == 'bank' and data.wire_details is empty) %}
+      {% set attendeeId = webform_token('[webform_submission:values:attendee_id]', webform_submission, [], options) %}
+      {% if not doNotShow %}
+         <p>Για να μπορέσετε να παρακολουθήσετε το συνέδριο με φυσική παρουσία παρακαλούμε να έχετε μαζί σας τον κωδικό QR που ακολουθεί.</p>
+         <center><img height="300" src="http://api.qrserver.com/v1/create-qr-code/?color=000000&amp;bgcolor=FFFFFF&amp;data={{attendeeId}}&amp;qzone=1&amp;margin=0&amp;size=400x400&amp;ecc=L"/></center>
+      {% endif %}
+  qr_code_attachment_url:
+    '#type': webform_computed_twig
+    '#title': 'QR code attachment URL'
+    '#display_on': none
+    '#mode': text
+    '#template': |
+      {% set doNotShow = data.web_attendance or ( data.web_attendance is empty and data.payment_method == 'bank' and data.wire_details is empty) %}
+      {% set attendeeId = webform_token('[webform_submission:values:attendee_id]', webform_submission, [], options) %}
+      {% if not doNotShow %}
+      {{'http://api.qrserver.com/v1/create-qr-code/?data=' ~ attendeeId ~ '&qzone=1&margin=0&size=400x400&ecc=L'}}
+      {% endif %}
+    '#whitespace': spaceless
+  qr_code_attachment:
+    '#type': attachment_url
+    '#title': 'QR code attachment'
+    '#states':
+      disabled:
+        ':input[name="qr_code_attachment_url"]':
+          empty: true
+    '#filename': qr.png
+    '#link_title': 'QR code'
+    '#url': '[webform_submission:values:qr_code_attachment_url]'
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#submit__label': Εγγραφή
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }
+variants: {  }
