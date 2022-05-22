@@ -10,6 +10,13 @@ or simple
 ```
 npx http-server
 ```
+# Drupal 
+```
+composer install
+composer require drush/drush
+drush site-install standard --db-url=mysql://root@mysql/drupal
+drush upwd admin admin
+```
 
 ## References
 * [ZEBRA LABEL SIZES](https://www.labelvalue.com/zebra-label-sizes)
