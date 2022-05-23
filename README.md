@@ -29,6 +29,8 @@ drush upwd admin admin
 ### Drupal Dev on Codespaces
 * https://github.com/skounis/drupal-on-codespaces
 * https://lando.dev/blog/2022/02/07/using-lando-on-github-codespaces.html
-     * https://github.com/lando/drupal-dev-environment
+    * https://github.com/lando/drupal-dev-environment
 * Multiple containers
-     * https://devopstar.com/2022/01/03/cypress-testing-in-devcontainers-and-github-codespaces   
+    * https://devopstar.com/2022/01/03/cypress-testing-in-devcontainers-and-github-codespaces   
+* Tools
+    * https://www.cyberciti.biz/faq/how-to-check-open-ports-in-linux-using-the-cli/
