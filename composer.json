@@ -1,0 +1,6 @@
+{
+    "name": "betterevents/mt_event_badge_print",
+    "description": "Enables badge printing.",
+    "type": "module",
+    "license": "GPL-2.0-or-later",
+}
