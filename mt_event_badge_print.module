@@ -1,7 +1,7 @@
 <?php
 function mt_event_badge_print_preprocess_page(&$variables){
   // Check if the page is the view page for badge print.
-  if (\Drupal::routeMatch()->getRouteName() !== 'view.badges.page_2') {
+  if (\Drupal::routeMatch()->getRouteName() !== 'view.mt_badges.page_1') {
     return;
   }
 
