@@ -1,0 +1,6 @@
+name: 'Badge Print'
+type: module
+description: 'Enables badge printing.'
+package: 'MT Configuration'
+core_version_requirement: ^8 || ^9
+dependencies: {}

@@ -1,0 +1,17 @@
+<?php
+function mt_event_badge_print_preprocess_page(&$variables){
+  // Check if the page is the view page for badge print.
+  if (\Drupal::routeMatch()->getRouteName() !== 'view.badges.page_2') {
+    return;
+  }
+
+  foreach (\Drupal::theme()
+             ->getActiveTheme()
+             ->getRegions() as $region) {
+    if (isset($variables['page'][$region]) && $region !== 'content') {
+      unset($variables['page'][$region]);
+    }
+  }
+
+  $variables['#attached']['library'][] = 'mt_event_badge_print/mt_event_badge_print';
+}

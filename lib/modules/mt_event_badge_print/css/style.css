@@ -1,0 +1,115 @@
+/*.ruler {*/
+/*  display: flex;*/
+/*  flex-wrap: nowrap;*/
+/*  list-style: none;*/
+/*  position: relative;*/
+/*  margin: 4em 2em;*/
+/*  height: 2em;*/
+/*  padding: 0;*/
+/*  color: #ddd;*/
+/*  outline: 2px currentColor solid;*/
+/*  outline-offset: -2px;*/
+
+/*  counter-reset: cm;*/
+/*  width: max-content;*/
+/*  font: .85em Arial;*/
+
+/*  position: absolute;*/
+/*}*/
+
+/*.ruler.vertical {*/
+/*  transform: rotate(90deg);*/
+/*}*/
+
+/*.ruler::before {*/
+/*  display: block;*/
+/*  width: max-content;*/
+/*  content: "0";*/
+/*  position: absolute;*/
+/*  bottom: 100%;*/
+/*  left: 2px;*/
+/*  transform: translate(-50%, -1em)*/
+/*}*/
+
+
+/*.ruler li::after {*/
+/*  content: counter(cm);*/
+/*  counter-increment: cm;*/
+/*  display: block;*/
+/*  width: max-content;*/
+/*  overflow: visible;*/
+/*  color: #ddd;*/
+/*  text-align: right;*/
+/*  transform: translate(50%, -1.5em);*/
+/*}*/
+
+/*.ruler li:nth-child(2n - 1)::after {*/
+/*  color: transparent;*/
+/*}*/
+
+
+/*.ruler li {*/
+/*  display: flex;*/
+/*  flex-wrap: nowrap;*/
+/*  justify-content: flex-end;*/
+/*  color: transparent;*/
+/*  width: 1cm;*/
+/*  height: calc(2px + 1.5em);*/
+/*  transform: translate(0, -.75em);*/
+/*  box-sizing: border-box;*/
+/*  border-left: 2px #ddd solid;*/
+/*}*/
+
+/*.ruler li:last-child {*/
+/*  border-right: 2px #ddd solid;*/
+/*}*/
+
+/*!* EOF Ruler *!*/
+
+
+* {
+  font-family: sans-serif;
+}
+
+/* Label 6x4cm - 0.3cm margins */
+.view-badges.view-display-id-page_2 .views-row {
+  border: 1px solid rgb(229, 226, 226);
+  page-break-after: always;
+  height: 3.65cm;
+  width: 5.5cm;
+  overflow: hidden;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.view-badges.view-display-id-page_2 .views-row img {
+  width: auto;
+  height: 2.7cm;
+  display: inline-block;
+  text-align: center;
+}
+
+.view-badges.view-display-id-page_2 .views-row h1 {
+  font-weight: normal;
+  font-size: 14px;
+  margin: 1px 0 4px 0;
+  padding: 0;
+  height: auto;
+  text-align: center;
+  line-height: .9;
+}
+
+@media print {
+  /*.ruler {*/
+  /*  display: none*/
+  /*}*/
+
+  .view-badges.view-display-id-page_2 .views-row {
+    border: 0;
+  }
+
+  .view-badges.view-display-id-page_2 .view-filters {
+    display: none !important;
+  }
+}
