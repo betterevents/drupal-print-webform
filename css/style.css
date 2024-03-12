@@ -87,6 +87,7 @@
 
 .mt-section-qr h1 {
   font-weight: normal;
+  font-weight: bold;
   font-size: 14px;
   margin: 1px 0 4px 0;
   padding: 0;
@@ -139,5 +140,9 @@
   .view-mt-badges .contextual,
   body.path-badges .mt-mobile-menu-widget-wrapper{
     display: none !important;
+  }
+  
+  @page {
+    size: auto !important;
   }
 }
