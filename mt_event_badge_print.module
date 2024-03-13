@@ -21,3 +21,15 @@ function mt_event_badge_print_preprocess_page(&$variables){
 
   $variables['#attached']['library'][] = 'mt_event_badge_print/mt_event_badge_print';
 }
+
+function mt_event_badge_print_preprocess_html(&$variables) {
+  // Inject badge class in the body - Scope ETS
+  // As per https://github.com/betterevents/ets.betterevents.live/issues/168
+  $path = \Drupal::service('path.current')->getPath();
+  $aliases = explode('/', $path);
+  foreach ($aliases as $alias) {
+    $word = 'badges';
+    if (strpos($alias, $word) === 0) {
+      $variables['attributes']['class'][] = 'be-view-badges';
+    } 
+  }
