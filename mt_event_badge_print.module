@@ -33,3 +33,4 @@ function mt_event_badge_print_preprocess_html(&$variables) {
       $variables['attributes']['class'][] = 'be-view-badges';
     } 
   }
+}
