@@ -30,7 +30,7 @@ function mt_event_badge_print_preprocess_html(&$variables) {
   foreach ($aliases as $alias) {
     $word = 'badges';
     if (strpos($alias, $word) === 0) {
-      $variables['attributes']['class'][] = 'be-view-badges__module';
+      $variables['attributes']['class'][] = 'be-view-badges';
     } 
   }
 }
